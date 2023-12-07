@@ -8,7 +8,6 @@ body {
 
 main {
     width: 80vh;
-    height: 80vh;
     margin: 10%;
     overflow: hidden;
     border-top-left-radius: 15px;
@@ -52,5 +51,25 @@ main {
 #pComandi {}
 
 .estratti {
+    border: 1px solid black;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    border: 0 solid white;
+    border-radius: 10px;
     background-color: red;
+}
+
+.estratti h1 {
+    color: white;
+    text-align: center;
+    font-size: 26px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
 }
