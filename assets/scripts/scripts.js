@@ -1,4 +1,4 @@
-
+let footer = document.getElementById("footer")
 let mainDiv = document.getElementById("mainDiv")
 let numeroNumeri = 76
 
@@ -47,6 +47,11 @@ const costruttoreQuadratino = function (num) {
     return div
 }
 
+let cambiaNumeri = function () {
+    const numeriDigitati = document.getElementById("numeroCaselleVolute")
+    numeroNumeri = numeriDigitati.textContent
+}
+
 const inizializzaComandi = function () {
     const divComandi = document.createElement("div")
     divComandi.style.display = "flex"
@@ -55,7 +60,6 @@ const inizializzaComandi = function () {
     pComandi.id = "pComandi"
     pComandi.innerText = "Premi sul pulsante per estrarre!"
     divComandi.style.borderRadius = "15px"
-    divComandi.style.border = "1px solid black"
     const buttonComandi = document.createElement("button")
     buttonComandi.style.cursor = "pointer"
     buttonComandi.innerText = "Estrai"
@@ -65,6 +69,14 @@ const inizializzaComandi = function () {
     divComandi.appendChild(pComandi)
     divComandi.appendChild(buttonComandi)
     mainDiv.appendChild(divComandi)
+
+    const divSetNumeri = document.createElement("div")
+    const input = document.createElement("input")
+    input.type = "text"
+    input.id = "numeroCaselleVolute"
+    input.placeholder = "Digita il numero di caselle volute"
+    footer.appendChild(input)
+    //footer.appendChild(footer)
 }
 
 const inizializzaGioco = function () {
@@ -77,6 +89,8 @@ const inizializzaGioco = function () {
     }
     mainDiv.appendChild(gameDiv)
 }
+
+
 inizializzaGioco()
 
 
