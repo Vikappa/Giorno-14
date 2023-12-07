@@ -1,0 +1,32 @@
+body {
+    background-color: lightgray;
+}
+
+main {
+    width: 80vh;
+    height: 80vh;
+    margin: 10%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.quadratinoNumero {
+    border: 1px solid black;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.quadratinoNumero h1 {
+    text-align: center;
+    font-size: 26px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
