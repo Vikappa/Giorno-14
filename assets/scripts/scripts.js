@@ -1,3 +1,4 @@
+
 let mainDiv = document.getElementById("mainDiv")
 let numeroNumeri = 76
 
@@ -51,6 +52,7 @@ const inizializzaComandi = function () {
     divComandi.style.display = "flex"
     const pComandi = document.createElement("p")
     pComandi.style.width = "100%"
+    pComandi.id = "pComandi"
     pComandi.innerText = "Premi sul pulsante per estrarre!"
     divComandi.style.borderRadius = "15px"
     divComandi.style.border = "1px solid black"

@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
 body {
     background-color: lightgray;
+    font-family: 'Rubik Mono One', monospace;
+
 }
 
 main {
@@ -7,7 +11,7 @@ main {
     height: 80vh;
     margin: 10%;
     overflow: hidden;
-    background-color: white;
+    border-radius: 15px;
 }
 
 .quadratinoNumero {
@@ -17,6 +21,9 @@ main {
     display: inline-block;
     position: relative;
     margin: 5px;
+    border: 0 solid white;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .quadratinoNumero h1 {
@@ -30,15 +37,22 @@ main {
     transform: translateY(-50%);
 }
 
-#comandi {
-    position: fixed;
+#pComandi {
+    display: inline;
+    padding: 2%;
+    margin: 1%;
     top: 0;
     right: 0;
     margin: 10px;
     background-color: #f0f0f0;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+#pComandi p {
+    display: flex;
+    margin: 2%;
+    background-color: white;
 }
 
 .estratti {
