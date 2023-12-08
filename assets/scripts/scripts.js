@@ -1,8 +1,10 @@
 let footer = document.getElementById("footer")
 let mainDiv = document.getElementById("mainDiv")
-const numeriDigitati = document.getElementById("numeroCaselleVolute")
+const input = document.createElement("input")
+input.type = "number"
+input.id = "numeroCaselleVolute"
 
-let numeroNumeri = 5
+let numeroNumeri = 10
 
 let numeriBingo = []
 let numeriEstratti = []
@@ -33,7 +35,9 @@ const newNumero = function () {
 const paintEstratti = function () {
     for (let i = 0; i < numeriEstratti.length; i++) {
         const cuboDaColorare = document.getElementById("numero" + numeriEstratti[i])
-        cuboDaColorare.classList.add("estratti")
+        if (cuboDaColorare) {
+            cuboDaColorare.classList.add("estratti")
+        }
     }
 }
 
@@ -44,13 +48,11 @@ const estraiNumero = function () {
     numeriBingo.concat(noncancellarmi)
     if (numeriEstratti.length === numeroNumeri) {
         console.log("Sequenza endgame")
-        while (mainDiv.hasChildNodes) {
-            mainDiv.removeChild(mainDiv.firstChild)
-        }
-    } else {
+        cambiaNumeri()
 
+    } else {
+        paintEstratti()
     }
-    paintEstratti()
 }
 
 const costruttoreQuadratino = function (num) {
@@ -64,8 +66,19 @@ const costruttoreQuadratino = function (num) {
 }
 
 let cambiaNumeri = function () {
-    numeroNumeri = numeriDigitati.textContent
-    console.log(numeroNumeri)
+    numeroNumeri = parseInt(input.value)
+    while (mainDiv.firstChild) {
+        mainDiv.removeChild(mainDiv.firstChild);
+    }
+    while (footer.firstChild) {
+        footer.removeChild(footer.firstChild);
+    }
+    numeriBingo.splice(0, numeriBingo.length)
+    numeriEstratti.splice(0, numeriEstratti.length)
+    for (let i = 1; i <= numeroNumeri; i++) {
+        numeriBingo.push(i)
+    }
+    inizializzaGioco()
 }
 
 const inizializzaComandi = function () {
@@ -88,14 +101,14 @@ const inizializzaComandi = function () {
 
     const divSetNumeri = document.createElement("div")
     divSetNumeri.style.margin = "2%"
-    const input = document.createElement("input")
-    input.type = "number"
-    input.id = "numeroCaselleVolute"
+
     input.placeholder = "Digita il numero di caselle volute"
     input.style.lineHeight = "2em"
     input.style.margin = "2%"
-    input.addEventListener("onsubmit", function () {
-        cambiaNumeri()
+    input.addEventListener("keydown", function () {
+        if (event.key === "Enter") {
+            cambiaNumeri();
+        }
     })
     const labelNumeriDesiderati = document.createElement("label")
     labelNumeriDesiderati.innerText = "Digita il numero di caselle che vuoi e premi invio"
@@ -105,6 +118,7 @@ const inizializzaComandi = function () {
 }
 
 const inizializzaGioco = function () {
+
     inizializzaComandi()
     const gameDiv = document.createElement("div")
     gameDiv.id = "gamediv"
