@@ -3,12 +3,12 @@
 body {
     background-color: lightgray;
     font-family: 'Rubik Mono One', monospace;
-
+    padding-top: 10vh;
 }
 
 main {
-    width: 80vh;
-    margin: 10%;
+    width: 60vw;
+    margin: 0 auto;
     overflow: hidden;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;

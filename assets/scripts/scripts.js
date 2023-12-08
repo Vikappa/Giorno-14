@@ -105,6 +105,7 @@ const inizializzaComandi = function () {
     input.placeholder = "Digita il numero di caselle volute"
     input.style.lineHeight = "2em"
     input.style.margin = "2%"
+    input.max = 999
     input.addEventListener("keydown", function () {
         if (event.key === "Enter") {
             cambiaNumeri();
@@ -122,7 +123,8 @@ const inizializzaGioco = function () {
     inizializzaComandi()
     const gameDiv = document.createElement("div")
     gameDiv.id = "gamediv"
-    for (let i = 0; i < numeriBingo.length; i++) {
+
+    for (let i = 0; i < numeriBingo.length && i < 1000; i++) {
         let blocco = costruttoreQuadratino(i + 1)
         gameDiv.appendChild(blocco)
     }
